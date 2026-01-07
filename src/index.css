@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply text-gray-900 min-h-screen bg-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-200;
+  }
+  
+  .card:hover {
+    @apply shadow-lg border-gray-300;
+  }
+  
+  .search-input {
+    @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500;
+    @apply focus:outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition-all;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white hover:bg-gray-50 text-gray-900 font-medium rounded-lg border border-gray-300 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  /* Smooth spring-like animations inspired by Airbnb */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-slide-out-left {
+    animation: slideOutLeft 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+  }
+
+  .animate-scale-fade-in {
+    animation: scaleFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-backdrop-in {
+    animation: backdropIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Staggered animations for filter fields */
+  .animate-stagger-1 {
+    animation: staggerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards;
+  }
+
+  .animate-stagger-2 {
+    animation: staggerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+  }
+
+  .animate-stagger-3 {
+    animation: staggerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+  }
+
+  .animate-stagger-4 {
+    animation: staggerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  }
+
+  .animate-stagger-5 {
+    animation: staggerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+  }
+
+  .animate-stagger-6 {
+    animation: staggerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes scaleFadeIn {
+    from {
+      transform: scale(0.95) translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes backdropIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes staggerFadeIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Smooth transitions for layout changes */
+  .transition-layout {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
