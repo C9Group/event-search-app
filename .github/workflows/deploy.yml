@@ -35,8 +35,9 @@ jobs:
 
       - name: Build
         env:
-          VITE_API_BASE_URL: https://openeventsapi.com/api/v1.0
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
         run: npm run build
 
       - name: Setup Pages
