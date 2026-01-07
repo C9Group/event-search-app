@@ -29,14 +29,11 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: './components/events/package-lock.json'
 
       - name: Install dependencies
-        working-directory: ./components/events
         run: npm ci
 
       - name: Build
-        working-directory: ./components/events
         env:
           VITE_API_BASE_URL: https://openeventsapi.com/api/v1.0
           VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
@@ -48,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './components/events/dist'
+          path: './dist'
 
   deploy:
     environment:
