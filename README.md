@@ -2,6 +2,10 @@
 
 A demonstration app showcasing the [OpenEvents API](https://openeventsapi.com) search capabilities.
 
+## Preview
+
+App is available here: https://c9group.github.io/event-search-app/
+
 ## What is this?
 
 This is a simple React app that demonstrates how to search and display events using the OpenEvents API. It features semantic search, filters, and a clean UI.
