@@ -13,8 +13,8 @@ This is a simple React app that demonstrates how to search and display events us
 ## Quick Start
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Visit `http://localhost:5175`
